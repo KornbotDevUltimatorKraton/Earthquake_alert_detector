@@ -1,0 +1,15 @@
+[Unit]
+Description=earthquake_alarm_system
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/roboticsplatform/Earthquake_alert_web/earthquake_today_loop.py
+WorkingDirectory=/home/roboticsplatform/Earthquake_alert_web
+User=roboticsplatform
+Group=roboticsplatform
+Restart=on-failure
+#Environment="AUDIODEV=plughw:1,0"
+Restart=always
+RestartSec=3
+[Install]
+WantedBy=default.target
